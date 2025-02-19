@@ -1,0 +1,1940 @@
+body {
+  background-color: black;
+  font-size: 10px;
+  font-size: 0.9vw;
+  font-size: 1vmin;
+}
+
+.container {
+  position: absolute;
+  top: 14em;
+  left: calc(50% - 35em);
+}
+
+:root {
+  --highlight: #D6DC22;
+  --outline-width: 0.25em;
+  
+  --portal-gun-light: #7C858A;
+  --portal-gun-dark: #5D676F;
+  --portal-gun-glass: #397A33;
+  --portal-gun-glass-transparent: rgba(172, 195, 138, 0.7);
+  --portal-gun-beam-one: #AFD16A;
+  --portal-gun-beam-two: #629747;
+  --portal-gun-beam-three: #5D9E39;
+  --portal-gun-handle: #C4C7CA;
+  
+  --rick-skin: #C1B8B4;
+  --rick-hair: #B7D8EB;
+  --rick-mouth:#792F28;
+  --rick-teeth: #D4CB8D;
+  --rick-coat: #fff;
+  
+  --morty-skin: #F2CFB3;
+  --morty-mouth: #61302E;
+  --morty-top: #F0ED81;
+}
+
+.title {
+  position: absolute;
+  bottom: 11em;
+  width: 100%;
+  text-align: center;
+  font-family: 'Get Schwifty';
+  color: #08BAE3;
+  z-index: 70;
+  left: -7em;
+  -webkit-text-stroke: 0.2em rgba(0,0,0,0.6);
+  transform: scaleX(1.3);
+  
+  span {
+    display: inline-block;
+    position: absolute;
+    top: 20em;
+    i {
+      font-style: normal;
+    }
+  }
+  /* R */
+  span:nth-of-type(1) {
+    top: -12em;
+    left: 9.5em;
+    transform: rotateZ(-12deg);
+    i {
+      font-size: 22em;
+    }
+  }
+  /* i */
+  span:nth-of-type(2) {
+    top: -4em;
+    left: 17em;
+    transform: rotateZ(-4deg);
+    i {
+      font-size: 11em;
+    }
+  }
+  /* c */
+  span:nth-of-type(3) {
+    top: -3em;
+    left: 19.5em;
+    i {
+      font-size: 10em;
+    }
+  }
+  /* k */
+  span:nth-of-type(4) {
+    top: -5em;
+    left: 23.7em;
+    transform: rotateZ(-2deg);
+    i {
+      font-size: 14em;
+    }
+  }
+  /* a */
+  span:nth-of-type(5) {
+    left: 32.3em;
+    top: -1em;
+    i {
+      font-size: 9em;
+    }
+  }
+  /* n */
+  span:nth-of-type(6) {
+    top: 0em;
+    i {
+      font-size: 5.5em;
+    }
+  }
+  /* d */
+  span:nth-of-type(7) {
+    top: 0.3em;
+    left: 38.3em;
+    i {
+      font-size: 7em;
+    }
+  }
+  /* M */
+  span:nth-of-type(8) {
+    top: -8em;
+    left: 44em;
+    i {
+      font-size: 16em;
+    }
+  }
+  /* o */
+  span:nth-of-type(9) {
+    top: -6.5em;
+    left: 52.5em;
+    i {
+      font-size: 14em;
+    }
+  }
+  /* r */
+  span:nth-of-type(10) {
+    top: -2em; 
+    left: 58em;
+    i {
+      font-size: 9em;
+    }
+  }
+  /* t */
+  span:nth-of-type(11) {
+    top: -2.5em;
+    left: 60.8em;
+    i {
+      font-size: 12em;
+    }
+  }
+  /* y */
+  span:nth-of-type(12) {
+    top: -5em;
+    left: 64em;
+    transform: rotateZ(25deg);
+    
+    i {
+      font-size: 18em;
+    }
+  }
+  
+}
+
+.title.middle {
+  -webkit-text-stroke: 1.2em #BEDF6C;
+  z-index: 69;
+}
+
+.title.bottom {
+  -webkit-text-stroke: 4.0em black;
+  z-index: 68;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 22em;
+    top: -2em;
+    background-color: black;
+  }
+}
+
+.portal-bubbles {
+  --portal-shade-one: #DDDF59;
+  --portal-shade-two: #FBFABE;
+  --portal-shade-three: #F2F055;
+  --portal-shade-four: #FFFFF4;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 70em;
+  width: 70em;
+  background-image:
+    /* white bubbles */
+    radial-gradient(3% 2% at 60.2% 13%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2% 2% at 48% 4%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(1.5% 1% at 54% 21%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(3% 3% at 59% 6%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(1% 1.2% at 94% 38%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(1.5% 2.5% at 5% 64%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2.5% 3% at 5.5% 67%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 4% 53%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2.5% 3.5% at 3% 50%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(1.5% 2% at 7% 30%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(3% 2% at 5% 40%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(3% 2% at 93% 44%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2% 3% at 97% 58%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2% 3% at 92% 65%, var(--portal-shade-four) 50%, transparent 50%),
+    radial-gradient(2% 3% at 87% 75%, var(--portal-shade-four) 50%, transparent 50%),
+    
+    /* fg bubbles (dark) - left of Rick */
+    radial-gradient(1% 1% at 16.5% 66.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(2% 2% at 17.5% 67.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 17% 68.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1% 1% at 16.5% 69.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 15.5% 55.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 14.5% 54.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1% 1% at 13.4% 54.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 12.4% 54.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1% 1% at 16.8% 62%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.4% 1.4% at 16.9% 58.3%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(2% 2% at 16.9% 59.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1% 1% at 16.9% 60.5%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1% 1% at 17.1% 61.2%, var(--portal-shade-three) 50%, transparent 50%),
+    radial-gradient(1.5% 1.5% at 16% 60%, var(--portal-shade-three) 50%, transparent 50%),
+    
+    
+    /* fg bubbles - left of Rick */
+    radial-gradient(1.5% 2% at 12% 42%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 2.5% at 8% 46.4%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 1.5% at 6.8% 54.4%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 7.8% 64.4%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(2.5% 2.5% at 8.8% 66%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2.5% 4.5% at 11.2% 72.2%, var(--portal-shade-two) 45%, transparent 40%),
+    radial-gradient(2.5% 2.5% at 12.8% 71%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(3% 3% at 14.8% 64%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(4% 3.5% at 14.5% 66%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 1.5% at 15% 51.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2% 3% at 11% 51.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(3% 3% at 13.5% 52.9%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 11% 54.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 1.55% at 11% 58.7%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 1.55% at 8.3% 58.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 2.55% at 9.5% 59.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2.5% 2.5% at 11.5% 60.5%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(5% 5% at 14% 57.5%, var(--portal-shade-two) 55%, transparent 55%),
+    radial-gradient(3% 3% at 14% 62%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 3% at 16% 61%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(5% 4% at 18% 64%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(4% 4% at 18% 66%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 2% at 14% 69%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 16% 68%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(4% 4% at 19% 70%, var(--portal-shade-two) 50%, transparent 50%),
+    
+    /* fg bubbles (dark) - Morty arm area */
+    radial-gradient(1.3% 1.3% at 77% 72.5%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(2% 2% at 78% 74%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1% 1.2% at 85% 61.8%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 84.5% 64.2%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(2% 1% at 82.8% 69%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 81.5% 69.2%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1% 1% at 84% 62.8%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(2% 2% at 80% 66%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1% 1% at 80.4% 67.5%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1% 1% at 81% 67.8%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1% 1% at 81% 63.5%, var(--portal-shade-three) 60%, transparent 60%),
+    radial-gradient(1.5% 1% at 81% 64.5%, var(--portal-shade-three) 60%, transparent 60%),
+    
+    /* fg bubbles - cluster bottom right under Morty */
+    radial-gradient(2% 1.4% at 85% 71%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 2% at 69% 67%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 2% at 69% 65%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(3% 4% at 75% 67%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(4% 4% at 72% 66%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(4% 4% at 76% 69%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 5% at 79% 71%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2% 2% at 81% 73.5%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 2% at 80% 75%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 3% at 79% 64%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 78% 67%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 3% at 80% 69%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2% 2% at 78% 75%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 77% 73%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 76% 76%, var(--portal-shade-two) 40%, transparent 40%),
+    
+    /* fg bubbles - cluster under Morty */
+    radial-gradient(2% 2% at 59% 63%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(3% 3% at 56% 63%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(3% 2% at 58% 65%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(2% 3% at 60% 65%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(4% 3% at 65% 68%, var(--portal-shade-two) 40%, transparent 60%),
+    radial-gradient(3% 7% at 60% 69%, var(--portal-shade-two) 40%, transparent 60%),
+    radial-gradient(4% 4% at 62% 70%, var(--portal-shade-two) 40%, transparent 60%),
+    radial-gradient(6% 5% at 58% 72%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(3% 5% at 58% 69%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(4% 3% at 57% 67%, var(--portal-shade-two) 60%, transparent 60%),
+    radial-gradient(4% 3% at 62% 67%, var(--portal-shade-two) 60%, transparent 60%),
+    
+    /* fg bubbles - cluster Morty Arm*/
+    radial-gradient(1.5% 1.5% at 89% 47%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2.5% 3.5% at 88.7% 49%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2.5% 3.5% at 87.7% 52%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(4% 3% at 82% 59%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(3% 5% at 80% 60%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(5% 5% at 82% 63%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(5% 5% at 82% 66%, var(--portal-shade-two) 45%, transparent 45%),
+    radial-gradient(3% 2% at 86% 66%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(2% 2% at 88% 65%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(6% 9% at 86% 62%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(3% 4% at 89% 56.5%, var(--portal-shade-two) 45%, transparent 45%),
+    radial-gradient(2% 4% at 87% 58%, var(--portal-shade-two) 50%, transparent 50%),
+    radial-gradient(2% 2% at 85% 58%, var(--portal-shade-two) 50%, transparent 50%),
+    
+    /* BACKGROUND BUBBLES */
+    radial-gradient(1% 1.5% at 56% 27%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1% 1.5% at 56% 27%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2.5% at 58% 29%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(2% 2.5% at 58% 29%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 2% at 56% 37%, var(--portal-shade-two) 40%, transparent 40%),
+    radial-gradient(1.5% 2% at 56% 37%, var(--portal-shade-one) 60%, transparent 60%),
+    
+    /* bg bubbles - left of Rick */
+    radial-gradient(1.5% 2% at 12% 42%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 2.5% at 8% 46.4%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 6.8% 54.4%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 7.8% 64.4%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2.5% 2.5% at 8.8% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2.5% 4.5% at 11.2% 72.2%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2.5% 2.5% at 12.8% 71%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 14% 64%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 14% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 15% 51.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 11% 51.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 13.5% 52.9%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 11% 54.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.55% at 11% 58.7%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.55% at 8.3% 58.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 2.55% at 9.5% 59.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2.5% 2.5% at 11.5% 60.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(5% 5% at 14% 57.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 14% 62%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 16% 61%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(5% 4% at 18% 64%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 4% at 18% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 14% 69%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 16% 68%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 4% at 19% 70%, var(--portal-shade-one) 60%, transparent 60%),
+    
+    
+    /* bg bubbles - cluster bottom right under Morty */
+    radial-gradient(2% 1.4% at 85% 71%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 69% 67%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 69% 65%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 4% at 75% 67%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 4% at 72% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 4% at 76% 69%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 4% at 79% 71.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 81% 73.5%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 80% 75%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 79% 64%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 78% 67%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 80% 69%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 78% 75%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 77% 73%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 76% 76%, var(--portal-shade-one) 60%, transparent 60%),
+    
+    /* bg bubbles - cluster under Morty */
+    radial-gradient(2% 2% at 53.5% 69%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 59% 63%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 3% at 56% 63%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 2% at 58% 65%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 60% 65%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 3% at 65% 68%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 4% at 62% 70%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(6% 5% at 58% 72%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 5% at 58% 69%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 3% at 57% 67%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 3% at 62% 67%, var(--portal-shade-one) 60%, transparent 60%),
+    
+    /* bg bubbles - cluster Morty Arm*/
+    radial-gradient(1.5% 1.5% at 89.5% 44%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(1.5% 1.5% at 89% 47%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 89% 49%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 3% at 88% 52%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(4% 3% at 82% 59%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 5% at 80% 60%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(5% 5% at 82% 63%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(5% 5% at 82% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 2% at 86% 66%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 88% 65%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(6% 6% at 86% 62%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(3% 4% at 89% 56%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 4% at 87% 58%, var(--portal-shade-one) 60%, transparent 60%),
+    radial-gradient(2% 2% at 85% 58%, var(--portal-shade-one) 60%, transparent 60%)
+    ;
+}
+
+.portal {
+  background-color: #66BA4F;  
+  box-shadow: 0px 0px 40px 10px #448C3F;
+  height: 70em;
+  width: 70em;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at 77% 80%, #FDFEB4 2.5%, transparent 2.5%),
+    radial-gradient(circle at 75% 83%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 79% 83%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 45% 13%, #FFFFD5 1.5%, transparent 1.5%),
+    radial-gradient(circle at 42% 13%, #FFFFD5 2%, transparent 2%),
+    radial-gradient(circle at 38% 14%, #FFFFD5 1.5%, transparent 1.5%),
+    radial-gradient(circle at 20% 24%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 21% 23%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 51% 13%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 81% 33%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 85% 36%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 21% 46%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 20% 51%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 53% 51%, transparent 64%, #82B458 65%),
+    radial-gradient(circle at 47% 59%, transparent 64%, #D3E06D 65%),
+    radial-gradient(circle at 47% 60%, transparent 58%, #509249 59%),
+    radial-gradient(circle at 50% 59%, transparent 54%, #9AC158 55%),
+    radial-gradient(circle at 45% 60%, transparent 54%, #509249 55%),
+    radial-gradient(circle at 47% 60%, transparent 45%, #509249 46%),
+    radial-gradient(circle at 46% 55%, transparent 42%, #9BC65C 43%),
+    radial-gradient(circle at 36% 55%, transparent 42%, #9BC65C 43%),
+    radial-gradient(circle at 50% 60%, transparent 40%, #9BC65C 41%),
+    radial-gradient(circle at 50% 53%, transparent 40%, #3D7E34 41%),
+    radial-gradient(circle at 30% 48%, transparent 40%, #3B8344 41%),
+    radial-gradient(circle at 57% 69%, transparent 40%, #3D7E34 41%),
+    radial-gradient(circle at 40% 88%, transparent 40%, #9BC65C 41%),
+    radial-gradient(circle at 67% 54%, transparent 40%, #FAEB7B 41%),
+    radial-gradient(circle at 49% 35%, transparent 40%, #9BC65C 41%),
+    radial-gradient(circle at 79% 59%, transparent 40%, #FFFE9C 37%),
+    radial-gradient(circle at 50% 50%, #FDFEB4 100%, #FDFEB4 100%)
+    ;
+}
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+}
+
+.portal-gun {
+  position: relative;
+  left: 16em;
+  top: 28em;
+  transform: rotateZ(1deg);
+  z-index: 30;
+  .outer-inset {
+    position: absolute;
+    height: 10em;
+    width: 29.5em;
+    background-color: var(--portal-gun-light);
+    border: calc(var(--outline-width) * 1.5) solid black;
+    z-index: 20;
+    overflow: hidden;
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 99%;
+      height: 0.2em;
+      background-color: var(--highlight);
+      opacity: 0.8;
+      z-index: 24;
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0.2em;
+      height: 10em;
+      background-color: var(--highlight);
+      opacity: 0.8;
+      z-index: 24;
+      top: 0;
+      right: 0;
+    }
+    
+    .shading {
+      background-color: var(--portal-gun-dark);
+      height: 11em;
+      width: 10em;
+      position: absolute;
+      right: -3em;
+      transform: rotateZ(-25deg);
+      z-index: 23;
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: var(--portal-gun-dark);
+        height: 4em;
+        width: 3em;
+        transform: rotateZ(50deg);
+        top: -0.2em;
+        left: 3em;
+      }
+    }
+    
+    .corner {
+      height: calc(var(--outline-width) * 1.5);
+      border-radius: 15%;
+      width: 1.8em;
+      background-color: black;
+      position: absolute;
+      z-index: 25;
+      
+      &.top-left {
+        transform: rotateZ(45deg);
+        left: -0.4em;
+        top: 0.25em;
+      }
+      
+      &.top-right {
+        transform: rotateZ(-45deg);
+        right: -0.4em;
+        top: 0.25em;
+      }
+      
+      &.bottom-right {
+        transform: rotateZ(45deg);
+        right: -0.4em;
+        bottom: 0.25em;
+      }
+      
+      &.bottom-left {
+        transform: rotateZ(-45deg);
+        left: -0.4em;
+        bottom: 0.25em;
+      }
+    }
+  }
+  
+  .front-inset {
+    background-color: var(--portal-gun-dark);
+    position: absolute;
+    height: 7.5em;
+    width: 27em;
+    top: 1.25em;
+    left: 1.25em;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    z-index: 21;
+    
+    .circle-beam {
+      font-size: 1.2em;
+      position: absolute;
+      height: 4.5em;
+      width: 4.5em;
+      border: calc(var(--outline-width) * 2) solid black;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: 
+        radial-gradient(circle at 65% 19%, var(--portal-gun-beam-one) 0%, var(--portal-gun-beam-two) 50%, var(--portal-gun-beam-three) 100%);
+      top: 0.85em;
+      
+      &:before {
+        content: '';
+        display: block;
+        height: calc(100% + 1.6em);
+        width: calc(100% + 1.6em);
+        box-sizing: border-box;
+        border: var(--outline-width) solid var(--portal-gun-dark);
+        border-radius: 50%;
+        position: relative;
+        top: -0.8em;
+        left: -0.8em;
+      }
+      
+      &:after {
+        content: '';
+        display: block;
+        height: calc(100% + 2em);
+        width: calc(100% + 2em);
+        box-sizing: border-box;
+        border: var(--outline-width) solid black;
+        border-radius: 50%;
+        position: relative;
+        top: -6.1em;
+        left: -1em;
+      }
+    }
+    
+    .one {
+      left: 1.6em;
+    }
+    
+    .two {
+      left: calc(50% - 2.25em);
+    }
+    
+    .three {
+      right: 1.6em;
+    }
+  }
+  
+  .bottom {
+    position: absolute;
+    width: 22.25em;
+    height: 0;
+    top: 10.5em;
+    left: 0;
+    border-top: 5.5em solid black;
+    border-left: 4em solid transparent;
+    border-right: 4em solid transparent;
+    
+    .color {
+      position: absolute;
+      width: 21.8em;
+      height: 0;
+      bottom: 0.4em;
+      left: -3.3em;
+      border-top: 4.9em solid var(--portal-gun-dark);
+      border-left: 3.5em solid transparent;
+      border-right: 3.5em solid transparent;
+      z-index: 19;
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 17.7em;
+        height: 0;
+        bottom: 0em;
+        left: -3.5em;
+        border-top: 4.9em solid var(--portal-gun-light);
+        border-left: 3.5em solid transparent;
+        border-right: 1.8em solid transparent;
+      }
+    }
+  }
+  
+  .top {
+    position: absolute;
+    border: calc(var(--outline-width) * 1.8) solid var(--portal-gun-glass);
+    background-color: var(--portal-gun-glass-transparent);
+    box-shadow: 
+      inset 0.2em  0.2em 0 var(--highlight),
+      inset -0.3em 0.2em 0 var(--highlight);
+    height: 10em;
+    width: 9em;
+    top: -10em;
+    left: 10em;
+    border-top-right-radius: 50% 30%;
+    border-top-left-radius: 50% 30%;
+    z-index: 20;
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: calc(var(--outline-width) * 2.8) solid rgba(255, 255, 255, 0.3);
+      border-top-right-radius: 100% 40%;
+      border-left: 0;
+      border-bottom: 0;
+      border-top: 0;
+      width: 2em;
+      height: 6em;
+      top: 1em;
+      right: 1em;
+    }
+  }
+  
+  .top-inside {
+    position: absolute;
+    top: -9em;
+    left: 10.6em;
+    
+    .ball {
+      position: absolute;
+      height: 6.5em;
+      width: 6.5em;
+      background-color: yellow;
+      border-radius: 50%;
+      opacity: 1;
+      z-index: 18;
+      top: 4.5em;
+      left: 1.3em;
+      box-shadow: 
+       0.3em 0.3em 0.5em var(--highlight),
+       -0.3em -0.3em 0.5em var(--highlight),
+       0.3em -0.3em 0.5em var(--highlight),
+       -0.3em 0.3em 0.5em var(--highlight);
+    }
+    
+    .spin {
+      background-color: green;
+      position: absolute;
+      width: 1.7em;
+      height: 0.7em;
+      opacity: 1;
+      border-top-left-radius: 80% 40%;
+      border-top-right-radius: 20% 10%;
+      border-bottom-left-radius: 30% 70%;
+      border-bottom-right-radius: 80% 90%;
+      border: var(--outline-width) solid white;
+      z-index: 19;
+    }
+    
+    .one {
+      top: 5em;
+      left: 2em;
+      transform: rotateZ(-25deg);
+    }
+    .two {
+      top: 6.4em;
+      left: 3.9em;
+      width: 2.3em;
+      transform: rotateZ(0deg) scaleX(-1);
+    }
+    .three {
+      top: 7.4em;
+      left: 0.8em;
+      width: 2em;
+      transform: rotateZ(-95deg) scaleY(-1);
+    }
+    .four {
+      top: 8em;
+      left: 2em;
+      width: 2.4em;
+      transform: rotateZ(285deg);
+    }
+    .five {
+      top: 8em;
+      left: 5em;
+      transform: rotateZ(-25deg);
+    }
+    .six {
+      top: 4.7em;
+      left: 4.5em;
+      transform: rotateZ(-135deg);
+    }
+    .seven{
+      top: 6.5em;
+      left: 6.2em;
+      height: 0.4em;
+      transform: rotateZ(80deg);
+    }
+  }
+  
+  .handle {
+    position: absolute;
+    height: 20em;
+    width: 10em;
+    top: 10em;
+    left: 9.7em;
+    background-color: var(--portal-gun-handle);
+    border: var(--outline-width) solid black;
+    border-top-right-radius: 50% 20%;
+    border-top-left-radius: 50% 20%;
+    border-bottom-right-radius: 80% 100%;
+    border-bottom-left-radius: 80% 100%;
+    z-index: 25;
+    transform: rotateX(-45deg);
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: calc(var(--outline-width) * 5) solid var(--highlight);
+      opacity: 0.6;
+      border-top-right-radius: 60% 30%;
+      border-left: 0;
+      border-bottom: 0;
+      border-top: 0;
+      width: 2em;
+      height: 9em;
+      top: 2.5em;
+      right: 0em;
+      transform: scaleX(-1);
+    }
+  }
+}
+
+.eye {
+  .ball, .ball:before, .ball:after {
+    position: absolute;
+    height: 0.9em;
+    width: 0.3em;
+    border-radius: 0.15em;
+    background-color: black;
+  }
+
+  .ball {
+    &:before, &:after {
+      content: '';
+      display: block;
+    }
+    &:after {
+      transform: rotateZ(60deg);
+    }
+    &:before {
+      transform: rotateZ(-60deg);
+    }
+  }
+}
+
+.rick {
+  position: absolute;
+  z-index: 10;
+  transform: rotateZ(-8deg);
+  top: 0em;
+  left: 10em;
+  
+  .head, .outer-head {
+    height: 31em;
+    width: 19em;
+    position: relative;
+  }
+  
+  .thumb {
+    height: 2.7em;
+    width: 5em;
+    position: absolute;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    border-top-right-radius: 70% 50%;
+    border-bottom-right-radius: 80% 50%;
+    background-color: var(--rick-skin);
+    box-shadow: -1em 0.3em 0 var(--highlight) inset;
+    transform: rotateZ(22deg);
+    top: 46.7em;
+    left: 19.8em;
+    z-index: 90;
+  }
+  
+  .outer-head {
+    .mouth {
+      width: 84%;
+      height: 4.5em;
+      background-color: var(--rick-mouth);
+      position: absolute;
+      top: 68%;
+      left: calc(50% - 41%);
+      border-top-left-radius: 20% 50%;
+      border-top-right-radius: 20% 50%;
+      border-bottom-left-radius: 60% 70%;
+      border-bottom-right-radius: 60% 70%;
+      border: var(--outline-width) solid black;
+      z-index: 54;
+      background: 
+        radial-gradient(100% 40% at 90% 2%, black 16%, transparent 16%),
+        radial-gradient(100% 40% at 10% 2%, black 16%, transparent 16%),
+        radial-gradient(28% 130% at 86.5% 11%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(22% 160% at 74.5% 18%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(25% 140% at 63.5% 25%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(27% 140% at 52.5% 28%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(22% 140% at 41.5% 22%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(24% 150% at 30.5% 18%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(20% 150% at 20% 9%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(23% 110% at 10% 10%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        
+        radial-gradient(28% 130% at 86.5% 91%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(22% 160% at 74.5% 100%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(25% 140% at 63.5% 98%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(27% 140% at 52.5% 96%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(22% 140% at 41.5% 94%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(24% 150% at 30.5% 93%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(20% 150% at 20% 89%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(23% 110% at 10% 80%, var(--rick-teeth) 16%, black 16%, black 20%, transparent 16%),
+        radial-gradient(23% 110% at 10% 80%, black 20%, var(--rick-mouth) 20%)
+        ;
+      
+      &:before {
+        content: '';
+        display: block;
+        background-color: var(--rick-skin);
+        height: 4em;
+        width: 80%;
+        position: relative;
+        left: calc(50% - 39%);
+        top: -2.7em;
+        border-bottom-left-radius: 60% 70%;
+        border-bottom-right-radius: 60% 70%;
+        border-bottom: var(--outline-width) solid black;
+      }
+      
+      &:after {
+        content: '';
+        display: block;
+        background-color: var(--rick-skin);
+        position: relative;
+        height: 1em;
+        width: 96%;
+        top: -5.1em;
+      }
+    }
+    
+    .lips {
+      height: 6em;
+      width: 8em;
+      position: absolute;
+      top: 20.6em;
+      left: 0.3em;
+      z-index: 55;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border: var(--outline-width) solid black;
+      border-top: 0;
+      border-bottom: 0;
+      border-right: 0;
+      transform: rotateZ(30deg);
+      
+      &.left:before {
+        content: '';
+        display: block;
+        background-color: var(--rick-skin);
+        height: 1em;
+        width: 3em;
+        left: 1.5em;
+        top: -0.1em;
+        position: relative;
+      }
+      
+      &.right {
+        background-color: var(--rick-skin);
+        transform: rotateZ(150deg);
+        left: 11.5em;
+        z-index: 53;
+      }
+    }
+    
+    .ear {
+      position: absolute;
+      height: 3.5em;
+      width: 3.5em;
+      background-color: var(--highlight);
+      border: var(--outline-width) solid black;
+      border-radius: 50%;
+      top: 17em;
+      
+      &:before {
+          content: '';
+          display: block;
+          border-radius: 50%;
+          position: relative;
+          background-color: var(--rick-skin);
+          height: 100%;
+          width: 100%;
+      }
+      
+      &.left {
+        left: -1.8em;
+        overflow: hidden;
+        
+        &:before {
+          height: 130%;
+          top: -0.4em;
+          left: var(--outline-width);
+        }
+      }
+      
+      &.right {
+        right: calc(-1.8em - var(--outline-width));
+        
+        &:before {
+          left: calc(var(--outline-width) * -1);
+        }
+      }
+    }
+    
+    .hair {
+      position: relative;
+      
+      &:before {
+        background-color: var(--rick-hair);
+        position: absolute;
+        display: block;
+        content: '';
+        width: 23.9em;
+        height: 30em;
+        top: -1.2em;
+        left: -1.6em;
+        border-top-left-radius: 50% 34%;
+        border-top-right-radius: 50% 47%;
+        border-bottom-left-radius: 50% 38%;
+        border-bottom-right-radius: 50% 48%;
+      }
+      
+      & > * {
+        --hair-width: 6em;
+        --hair-height: 10em;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: var(--hair-width) solid transparent;
+        border-right: var(--hair-width) solid transparent;
+        border-bottom: var(--hair-height) solid black;
+        
+        &:before {
+          content: '';
+          display: block;
+          border-left: var(--hair-width) solid transparent;
+          border-right: var(--hair-width) solid transparent;
+          border-bottom: var(--hair-height) solid var(--rick-hair);
+          position: relative;
+          top: 0.7em;
+          left: calc(var(--hair-width) * -1);
+        }
+        
+        &:after {
+          content: '';
+          display: block;
+          position: relative;
+          width: calc(var(--hair-height) - 4em);
+          border-left: 2.0em solid transparent;
+          border-right: 2.0em solid transparent;
+          border-bottom: 0.3em solid var(--highlight);
+          top: calc(var(--hair-height) * -0.4);
+          transform: rotateZ(251deg);
+          left: -4em;
+        }
+      }
+      
+      .top {
+        --hair-width: 4em;
+        --hair-height: 12em;
+        top: -12em;
+        left: -1em;
+        transform: rotateZ(-25deg);
+        
+        
+        &.top-right {
+          --hair-width: 4.5em;
+          transform: rotateZ(25deg);
+          left: 11em;
+          
+          &:before {
+            border-left: calc(var(--hair-width) * 1.2) solid transparent;
+            border-right: calc(var(--hair-width) * 1.2) solid transparent;
+            border-bottom: calc(var(--hair-height) * 1.2) solid var(--rick-hair);
+            left: calc(var(--hair-width) * -1.2)
+          }
+          
+          &:after {
+            left: -4.0em;
+            top: -8em;
+            transform: rotateZ(250deg);
+          }
+        }
+        
+        &.left, &.right {
+          --hair-width: 4em;
+          --hair-height: 11em;
+          top: -4.2em;
+          left: -8.6em;
+          transform: rotateZ(-65deg);
+          
+          &:after {
+            left: -3.7em;
+            top: -5em;
+            transform: rotateZ(250.5deg);
+          }
+        }
+        
+        &.right {
+          transform: rotateZ(55deg);
+          left: 19.7em;
+        }
+      }
+      .middle-top {
+        --hair-width: 3em;
+        --hair-height: 8em;
+        top: 5.5em;
+        
+        &.left{
+          transform: rotateZ(-85deg);
+          left: -8.8em;
+          
+          &:after {
+            left: -5.2em;
+            top: -3.5em;
+            transform: rotateZ(110deg);
+          }
+        }
+        
+        &.right {
+          left: 23em;
+          transform: rotateZ(90deg);
+          &:after {
+            left: -2.9em;
+            top: -3.5em;
+            transform: rotateZ(249.5deg);
+          }
+        }
+      }
+      
+      .middle-bottom {
+        --hair-width: 2.8em;
+        --hair-height: 6em;
+        top: 12.3em;
+        
+        &.left {
+          left: -8em;
+          transform: rotateZ(-90deg);
+          &:after {
+            left: -4.2em;
+            top: -2.5em;
+            transform: rotateZ(114deg);
+          }
+        }
+        &.right {
+          left: 22em;
+          top: 12em;
+          transform: rotateZ(90deg);
+          
+          &:after {
+            left: -1.9em;
+            top: -2.5em;
+            transform: rotateZ(245.5deg);
+          }
+        }
+      }
+      
+      .bottom {
+        --hair-width: 2.4em;
+        --hair-height: 5.5em;
+        top: 18.2em;
+        
+        &.left {
+          transform: rotateZ(-110deg);
+          left: -6.5em;
+          &:after {
+            display: none;
+          }
+        }
+        &.right {
+          transform: rotateZ(110deg);
+          left: 21.3em;
+          top: 17.9em;
+          &:after {
+            left: -1.8em;
+            top: -2.4em;
+            transform: rotateZ(247deg);
+          }
+        }
+      }
+      
+      .bottom-back {
+        --hair-width: 1.8em;
+        --hair-height: 4em;
+        top: 22.6em;
+        &.left {
+          transform: rotateZ(-130deg);
+          left: -3em;
+          &:after {
+            display: none;
+          }
+        }
+        &.right {
+          transform: rotateZ(130deg);
+          left: 19em;
+          top: 22.3em;
+          &:after {
+            left: -1.4em;
+            top: -1.6em;
+            transform: rotateZ(247deg);
+          }
+        }
+      }
+    }
+  }
+  .head {
+    background-color: var(--highlight);
+    border-top-left-radius: 50% 38%;
+    border-top-right-radius: 50% 38%;
+    border-bottom-left-radius: 50% 38%;
+    border-bottom-right-radius: 50% 38%;
+    border: var(--outline-width) solid black;
+    overflow: hidden;
+    
+    &:before {
+      border-top-left-radius: 50% 38%;
+      border-top-right-radius: 50% 38%;
+      border-bottom-left-radius: 50% 38%;
+      border-bottom-right-radius: 50% 38%;
+      position: relative;
+      left: calc(var(--outline-width) * -1);
+      top: var(--outline-width);
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: var(--rick-skin);
+      display: block;
+      background: 
+        radial-gradient(circle at 74% 36.2%, var(--rick-skin) 24.5%, transparent 24.5%),
+        radial-gradient(circle at 77.5% 38.8%, var(--highlight) 22%, transparent 22%),
+        radial-gradient(circle at 77.5% 43%, black 19%, transparent 19%),
+        radial-gradient(circle at 26% 23.8%, var(--rick-skin) 35%, transparent 35%),
+        radial-gradient(circle at 26% 42.1%, var(--highlight) 19%, transparent 19%),
+        radial-gradient(circle at 26% 43.3%, black 19%, transparent 19%),
+        radial-gradient(circle at 25% 30%, var(--rick-skin) 50%, var(--rick-skin) 50%)
+        ;
+    }
+
+    .brow {
+      width: 75%;
+      height: 1.8em;
+      border: var(--outline-width) solid black;
+      position: absolute;
+      top: 4.4em;
+      left: calc(50% - 37.5% - var(--outline-width));
+      z-index: 50;
+      background-color: var(--rick-hair);
+      border-top-left-radius: 80% 100%;
+      border-top-right-radius: 80% 100%;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      transform: rotate(-1deg);
+
+      &:after {
+        content: '';
+        display: block;
+        border-top: var(--outline-width) solid black;
+        background-color: var(--rick-skin);
+        height: 1.8em;
+        width: 98%;
+        left: 0.2em;
+        bottom: -1.2em;
+        border-top-left-radius: 80% 100%;
+        border-top-right-radius: 80% 100%;
+        position: absolute;
+      }
+
+    }
+
+    .eye {
+      background-color: white;
+      height: 7.5em;
+      width: 7.5em;
+      position: absolute;
+      top: 7.6em;
+      z-index: 50;
+      border-radius: 50%;
+      border: var(--outline-width) solid black;
+      
+      .ball {
+        top: 52%;
+        left: calc(50% - var(--outline-width));
+      }
+      
+      &.left {
+        left: 1em;
+      }
+
+      &.right {
+        right: 0.9em;
+      }
+    }
+      
+    .nose {
+      height: 3.5em;
+      width: 2em;
+      position: absolute;
+      top: 15.5em;
+      left: calc(50% - 1em - var(--outline-width));
+      border: var(--outline-width) solid black;
+      border-top-width: 0;
+      border-bottom-left-radius: 50% 90%;
+      border-bottom-right-radius: 50% 90%;
+      background-color: var(--highlight);
+      overflow: hidden;
+      z-index: 55;
+      
+      &:after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: calc(var(--outline-width) * -1);
+        left: calc(var(--outline-width) * -1);
+        border-top-width: 0;
+        border-bottom-left-radius: 50% 90%;
+        border-bottom-right-radius: 50% 90%;
+        background-color: var(--rick-skin);
+      }
+    }
+  }
+  .body {
+    background-color: var(--rick-coat);
+    height: 19em;
+    width: 10em;
+    left: 0.2em;
+    position: absolute;
+    transform: rotateZ(13deg);
+    border: var(--outline-width) solid black;
+    border-bottom-left-radius: 5em;
+    border-top-left-radius: 3em;
+    
+    .arm {
+      background-color: var(--rick-coat);
+      width: 8em;
+      height: 8.5em;
+      border: var(--outline-width) solid black;
+      border-left: 0;
+      border-top: 0;
+      position: absolute;
+      top: 12.2em;
+      left: 3.5em;
+      transform: rotateZ(30deg);
+      
+      .top-line {
+        position: absolute;
+        border-top-left-radius: 40% 50%;
+        border-top: var(--outline-width) solid var(--highlight);
+        height: 6em;
+        width: 8em;
+        left: -2.5em;
+        top: 2.2em;
+        transform: rotateZ(-25deg);
+        z-index: 31;
+        
+        &:before {
+          position: absolute;
+          content: '';
+          border-top: var(--outline-width) solid black;
+          border-top-left-radius: 40% 50%;
+          height: 6em;
+          width: 8em;
+          top: -0.5em;
+          transform: rotateZ(-1deg);
+          z-index: 30;
+        }
+      }
+      
+      .cuff {
+        height: 9em;
+        width: 5em;
+        border: var(--outline-width) solid black;
+        background-color: #A8CECB;
+        position: absolute;
+        top: -0.4em;
+        left: 4.9em;
+        transform: rotateZ(-25deg);
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        z-index: 32;
+        overflow: hidden;
+        
+        
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 2em;
+          width: 4em;
+          top: 8.3em;
+          background-color: lightgrey;
+          border: var(--outline-width) solid black;
+          transform: rotateZ(15deg)
+        }
+      }
+    }
+  }
+}
+
+.rick-hand {
+  position: absolute;
+  top: 40em;
+  left: 20em;
+  z-index: 50;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--rick-skin);
+    border-bottom-left-radius: 30%;
+    height: 8em;
+    width: 2.1em;
+    top: 5.9em;
+    left: 3.4em;
+    z-index: 35;
+  }
+  
+  .finger-one {
+    z-index: 30;
+    top: 0.7em;
+    left: 1.9em;
+    position: absolute;
+    box-shadow: -0.5em 0.5em 0 0 var(--highlight) inset;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    border-top-left-radius: 50% 40%;
+    border-top-right-radius: 30% 40%;
+    border-bottom: 0;
+    background-color: var(--rick-skin);
+    height: 3.5em;
+    width: 12em;
+    transform: rotateZ(-20deg);
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1em;
+      width: 8em;
+      background-color: var(--rick-skin);
+      top: 2.5em;
+      left: 2em;
+      border-bottom: calc(var(--outline-width) * 1.5) solid black;
+      transform: rotateZ(-7deg);
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: calc(var(--outline-width) * 1.5) solid black;
+      border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+      border-bottom: 0;
+      border-right: 0;
+      border-left: 0;
+      width: 2.6em;
+      left: 9.5em;
+      top: 3.8em;
+      transform: rotateZ(40deg);
+    }
+    
+    .middle {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: inherit;
+      box-shadow: -0.5em 0.5em 0 0 var(--highlight) inset;
+      border: calc(var(--outline-width) * 1.5) solid black;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      width: 3.5em;
+      height: 3.0em;
+      left: 10.3em;
+      top: 1.2em;
+      transform: rotateZ(45deg);
+      
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: var(--rick-skin);
+        border: calc(var(--outline-width) * 1.5) solid black;
+        border-top-left-radius: 30% 20%;
+        border-top-right-radius: 30% 20%;
+        border-bottom-right-radius: 90% 80%;
+        height: 2.5em;
+        width: 4.3em;
+        top: 0.6em;
+        left: 1.9em;
+        transform: rotateZ(45deg);
+      }
+      
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        box-shadow: 0em 0.5em 0 0 var(--highlight) inset;
+        background-color: var(--rick-skin);
+        height: 2.7em;
+        width: 2.9em;
+        left: 1em;
+      }
+    }
+  }
+  .finger-two {
+    position: absolute;
+    background-color: var(--highlight);
+    height: 6em;
+    width: 12em;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 40% 30%;
+    border-bottom-right-radius: 40% 70%;
+    border-left: 0;
+    top: 6em;
+    left: 4.8em;
+    z-index: 31;
+    
+    /* Knuckle */
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin); 
+      border: calc(var(--outline-width) * 1.5) solid black;
+      border-top-left-radius: 80% 50%;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotateZ(-25deg);
+      height: 3.4em;
+      width: 1.6em;
+      top: 0.2em;
+      left: -2.7em;
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin);
+      border-top-right-radius: 50% 40%;
+      border-bottom-right-radius: 70% 50%;
+      width: 95%;
+      height: 100%;
+      left: -0.5em;
+      top: 0.3em;
+    }
+  }
+  
+  .finger-three {
+    position: absolute;
+    background-color: var(--highlight);
+    height: 6em;
+    width: 11em;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    border-top-right-radius: 40% 30%;
+    border-bottom-right-radius: 40% 70%;
+    border-top-left-radius: 50% 10%;
+    border-left: 0;
+    top: 9.3em;
+    left: 5.2em;
+    z-index: 31;
+    
+    /* Knuckle */
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin); 
+      border: calc(var(--outline-width) * 1.5) solid black;
+      border-top-left-radius: 80% 50%;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotateZ(-33deg);
+      height: 3.4em;
+      width: 1.6em;
+      top: 0.5em;
+      left: -2.8em;
+    }
+    
+    /* highlight */
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin);
+      border-top-right-radius: 60% 50%;
+      border-bottom-right-radius: 70% 50%;
+      width: 95%;
+      height: 100%;
+      left: -0.5em;
+      top: 0.3em;
+    }
+  }
+  .finger-four {
+    position: absolute;
+    background-color: var(--highlight);
+    height: 3.2em;
+    width: 10em;
+    border: calc(var(--outline-width) * 1.5) solid black;
+    border-top-right-radius: 40% 30%;
+    border-bottom-right-radius: 40% 60%;
+    border-top-left-radius: 50% 20%;
+    border-left: 0;
+    top: 12.9em;
+    left: 5.3em;
+    z-index: 31;
+    
+    /* Knuckle */
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin); 
+      border: calc(var(--outline-width) * 1.5) solid black;
+      border-top-left-radius: 80% 50%;
+      border-bottom-left-radius: 50% 40%;
+      border-right: 0;
+      transform: rotateZ(-0deg);
+      height: 3.0em;
+      width: 2.4em;
+      top: -0.1em;
+      left: -2.5em;
+    }
+    
+    /* highlight */
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--rick-skin);
+      border-top-right-radius: 60% 50%;
+      border-bottom-right-radius: 30% 50%;
+      width: 95%;
+      height: 100%;
+      left: -0.5em;
+      top: 0.1m;
+    }
+  }
+  
+}
+.morty {
+  position: absolute;
+  top: 7.5em;
+  left: 45em;
+  .head {
+    width: 21.5em;
+    height: 22em;
+    background-color: var(--highlight);
+    border: var(--outline-width) solid black;
+    border-top-left-radius: 48%;
+    border-top-right-radius: 48%;
+    border-bottom-left-radius: 48%;
+    border-bottom-right-radius: 48%;
+    overflow: hidden;
+    position: relative;
+    z-index: 12;
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 8px;
+      background-color: var(--morty-skin);
+      background: 
+        radial-gradient(25% 6% at 76% 20.5%, var(--morty-skin) 40%, transparent 40%),
+        radial-gradient(21% 6% at 76% 19%, black 40%, transparent 40%),
+        radial-gradient(27% 6% at 30% 20.5%, var(--morty-skin) 40%, transparent 40%),
+        radial-gradient(25% 6% at 29% 19%, black 40%, var(--morty-skin) 40%)
+      ;
+      border-top-left-radius: 48%;
+      border-top-right-radius: 48%;
+      border-bottom-left-radius: 48%;
+      border-bottom-right-radius: 48%;
+      z-index: 10;
+    }
+  }
+  
+  .outer-head {
+    position: relative;
+    .ear.left {
+      height: 5em;
+      width: 5em;
+      position: absolute;
+      background: 
+        radial-gradient(160% 190% at 127% 16%, var(--morty-skin) 52%, transparent 20%),
+        radial-gradient(50% 50% at 76% 72%, var(--highlight) 52%, transparent 20%),
+        radial-gradient(circle at 50% 50%, var(--highlight) 52%, transparent 20%),
+        radial-gradient(circle at 50% 50%, black 60%, transparent 20%) 
+        ;
+      top: 12.8em;
+      left: -1em;
+      z-index: 15;
+    }
+    
+    .ear.right {
+      height: 5em;
+      width: 5em;
+      position: absolute;
+      background: 
+        radial-gradient(160% 190% at 127% 16%, var(--morty-skin) 52%, transparent 20%),
+        radial-gradient(50% 50% at 76% 72%, var(--morty-skin) 52%, transparent 20%),
+        radial-gradient(circle at 50% 50%, var(--morty-skin) 52%, transparent 20%),
+        radial-gradient(circle at 50% 50%, black 60%, transparent 20%) 
+        ;
+      top: 12.4em;
+      left: 17.7em;
+      z-index: 11;
+      transform: rotateZ(180deg);
+    }
+    
+    .hair {
+      background-color: var(--highlight);
+      border: var(--outline-width) solid black;
+      border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+      border-bottom-left-radius: 48%;
+      border-bottom-right-radius: 48%;
+      overflow: hidden;
+      position: absolute;
+      height: 24em;
+      width: 24.3em;
+      top: -4.5em;
+      left: -3em;
+      z-index: 0;
+      
+      &:after {
+        content: '';
+        background-color: #70512F;
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-left-radius: 48%;
+        border-bottom-right-radius: 48%;
+        position: absolute;
+        height: 24em;
+        width: 25.3em;
+        top: calc(var(--outline-width) * 1.55);
+        left: calc(var(--outline-width) * 1.7);
+      }
+    }
+  }
+  
+  .eye {
+    width: 7.3em;
+    height: 7.3em;
+    background-color: #fff;
+    border-radius: 50%;
+    border: var(--outline-width) solid black;
+    position: absolute;
+    top: 6em; 
+    z-index: 20;
+    
+    &.left {
+      left: 3.5em;
+    }
+    
+    &.right {
+      left: 13.5em;
+    }
+    
+    .ball {
+      top: calc(50% - 0.8em);
+      left: 20.4%;
+    }
+  }
+  
+  .nose {
+    width: 1.6em;
+    height: 1.5em;
+    border: var(--outline-width) solid black;
+    background-color: var(--highlight);
+    border-left: 0;
+    border-top-right-radius: 70% 50%;
+    border-bottom-right-radius: 70% 50%;
+    position: relative;
+    z-index: 20;
+    top: -9.5em;
+    left: 11.8em;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    
+    &:before {
+      content: '';
+      display: block;
+      width: 1.6em;
+      height: 1.5em;
+      background-color: var(--morty-skin);
+      border-left: 0;
+      border-top-right-radius: 70% 50%;
+      border-bottom-right-radius: 70% 50%;
+      position: absolute;
+      z-index: 20;
+      top: -0.55em;
+    }
+  }
+  
+  .mouth {
+    background-color: var(--morty-mouth);   
+    border: var(--outline-width) solid black;
+    width: 8em;
+    height: 4.5em;
+    position: absolute;
+    overflow: hidden;
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 60%;
+    border-bottom-left-radius: 30% 40%;
+    border-bottom-right-radius: 30% 40%;
+    background: 
+      radial-gradient(44% 130% at 27.5% 0%, white 16%, black 16%, black 20%, transparent 16%),
+      radial-gradient(48% 130% at 46.5% -4%, white 16%, black 16%, black 20%, transparent 16%),
+      radial-gradient(48% 130% at 66.5% 0%, white 16%, black 16%, black 20%, transparent 16%),
+      radial-gradient(38% 130% at 83.5% 4%, white 16%, black 16%, black 20%, var(--morty-mouth) 16%)
+      ;
+    transform: rotateZ(-3deg);
+    top: 15.9em;
+    left: 7.8em;
+    z-index: 23;
+    
+    &:before {
+      content: '';
+      display: block;
+      bottom: -0.6em;
+      height: 1.3em;
+      width: 2.6em;
+      position: absolute;
+      background-color: #EF3851;
+      border: var(--outline-width) solid black;
+      border-top-right-radius: 50% 50%;
+      border-top-left-radius: 70% 90%;
+      border-bottom-left-radius: 50% 40%;
+      border-bottom-right-radius: 90% 100%;
+      left: 1.4em;
+      z-index: 24;
+      transform: rotateZ(-10deg);
+    }
+  }
+  
+  .body {
+    background-color: var(--morty-top);   
+    position: absolute;
+    height: 15em;
+    width: 25em;
+    top: 16.7em;
+    left: -7em;
+    border-top-left-radius: 70% 120%;
+    border-top-right-radius: 50% 140%;
+    border: var(--outline-width) solid black;
+    border-bottom: 0;
+    transform: rotateZ(10deg);
+    
+    /* Gap between arm and body */
+    &:after {
+      content: '';
+      position: absolute;
+      background: 
+        radial-gradient(100% 150% at -10% -100%, #75B03B 90%, transparent 90%),
+        radial-gradient(100% 160% at -10% -100%, black 90%, transparent 90%);
+      border-bottom-right-radius: 50%;
+      border-top: var(--outline-width) solid black;
+      width: 10em;
+      height: 3em;
+      top: 11em;
+      left: 16.5em;
+      transform: rotateZ(-75deg);
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--morty-top);
+      height: 10em;
+      width: 17em;
+      top: 14em;
+      left: 2em;
+    }
+  }
+  
+  .hand {
+    position: absolute;
+    top: 27em;
+    left: 7.6em;
+    z-index: 20;
+    transform: rotateZ(35deg);
+    
+    &:after, &:before {
+      content: '';
+      display: block;
+      background-color: var(--morty-skin);
+      position: absolute;
+      border: var(--outline-width) solid black;
+      z-index: 10;
+    }
+    
+    &:after {
+      height: 2.4em;
+      width: 5em;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      top: 0.85em;
+      left: -7.1em;
+      transform: rotateZ(-35deg);
+    }
+    
+    &:before {
+      border-radius: 50%;
+      transform: rotateZ(-25deg);
+      top: -0.8em;
+      height: 3.5em;
+      width: 6.2em;
+      left: -5.2em;
+    }
+    
+    .finger {
+      position: absolute;
+      background-color: var(--morty-skin);
+      height: 0.9em;
+      width: 3.6em;
+      border: var(--outline-width) solid black;
+      border-left: 0;
+      border-top-left-radius: 70%;
+      border-top-right-radius: 190%;
+      border-bottom-right-radius: 140%;
+      z-index: 10;
+      
+      &.one {
+        top: -1.1em;
+        left: -0.3em;
+        height: 0.80em;
+        width: 3.9em;
+        
+        &:before {
+          content: '';
+          background-color: black;
+          height: 0.3em;
+          width: 2.6em;
+          position: absolute;
+          top: 4.7em;
+          left: -5.6em;
+          transform: rotateZ(-35deg);
+        }
+      }
+      &.two {
+        width: 4.3em;
+        height: 0.8em;
+        transform: rotateZ(15deg);
+        top: 0.5em;
+        left: -0.4em;
+      }
+      &.three {
+        transform: rotateZ(24.5deg);
+        height: 0.8em;;
+        top: 1.8em;
+        left: -0.4em;
+      }
+      &.four {
+        width: 3.0em;
+        height: 0.7em;
+        transform: rotateZ(40deg);
+        top: 2.90em;
+        left: -1.1em;
+      }
+    }
+    .thumb{
+      background-color: var(--morty-skin);
+      border: var(--outline-width) solid black;
+      border-top-left-radius: 50% 40%;
+      border-top-right-radius: 70% 130%;
+      height: 2em;
+      width: 0.8em;
+      position: absolute;
+      transform: rotateZ(40deg);
+      top: -2.2em;
+      left: -2.1em;
+      z-index: 2;
+    }
+  }
+}
